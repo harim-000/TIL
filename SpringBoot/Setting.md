@@ -16,10 +16,32 @@
    * artifactId: hello-spring Dependencies: Spring Web, Thymeleaf
    * 주의! - 스프링 부트 3.0
    * 스프링 부트 3.0을 선택하게 되면 다음 부분을 꼭 확인해주세요. 1. Java 17 이상을 사용해야 합니다.
-* javax 패키지 이름을 jakarta로 변경해야 합니다.
-오라클과 자바 라이센스 문제로 모든 javax 패키지를 jakarta로 변경하기로 했습니다. 3. H2 데이터베이스를 2.1.214 버전 이상 사용해주세요.
-패키지 이름 변경 예) JPA 애노테이션
-javax.persistence.Entity jakarta.persistence.Entity 스프링에서 자주 사용하는 @PostConstruct 애노테이션
-javax.annotation.PostConstruct jakarta.annotation.PostConstruct
-스프링에서 자주 사용하는 검증 애노테이션
-javax.validation jakarta.validation
+
+* **build.gradle** 기본설정
+```java
+plugins {
+id 'java'
+id 'org.springframework.boot' version '2.7.11'
+id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+group = 'hello'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+```
+
+J
