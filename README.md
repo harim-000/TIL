@@ -7,6 +7,8 @@
 # Algorithm
 - <a href="https://github.com/harim-000/TIL/tree/master/Algorithm/LeetCode">Leetcode</a>
 
+# Database
+
 # Spring Boot
 - <a href="https://github.com/harim-000/TIL/tree/master/SpringBoot/Setting.md">Setting</a>
 
